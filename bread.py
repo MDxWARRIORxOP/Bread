@@ -10,7 +10,6 @@ def start():
 
 def bake():
     while(True):
-        print("Bake a bread!")
         type = input("Which form do you want to bake your bread in? (q to quit)> ")
         
         if type == "q" or type == "quit":
