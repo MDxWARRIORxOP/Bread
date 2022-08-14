@@ -1,4 +1,6 @@
-bread.dist/
-bread.build/
+dist/
+build/
 *.pyc
 .vscode/
+# something thgat im working on rn
+install.py

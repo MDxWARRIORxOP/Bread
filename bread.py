@@ -1,6 +1,6 @@
 import time
 
-def start():
+def start() -> None:
     timeToSleep = 1
     print("Welcome to the BREAD")
     time.sleep(timeToSleep)
@@ -12,8 +12,9 @@ def start():
     time.sleep(timeToSleep)
     print("So lets bake some bread!")
     time.sleep(timeToSleep)
+    bake()
 
-def bake():
+def bake() -> None:
     while(True):
         type = input("Which form do you want to bake your bread in? (q to quit)> ")
         
@@ -31,4 +32,3 @@ def bake():
 
 if __name__=="__main__":
     start()
-    bake()
