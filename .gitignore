@@ -1,0 +1,4 @@
+bread.dist/
+bread.build/
+*.pyc
+.vscode/
