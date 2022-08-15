@@ -6,7 +6,7 @@ The bread.exe file is made using [nuitka](https://nuitka.net/)
 
 ## running the awesome bread game
 
-use the bread.exe file or just run:
+use the [bread.exe](https://mdxwarriorxop.github.io/bread/) file or just run:
 
 ```bash
 python bread.py
