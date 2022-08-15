@@ -9,5 +9,5 @@ The [bread.exe](https://mdxwarriorxop.github.io/bread/) file is made using [nuit
 use the [bread.exe](https://mdxwarriorxop.github.io/bread/) file or just run:
 
 ```bash
-python bread.py
+$ python bread.py
 ```
