@@ -9,7 +9,9 @@ client_id = '1013449949364617307'
 RPC = Presence(client_id)
 RPC.connect()
 
-print(RPC.update(state="The Awesome Bread Game", details="Having Fun Playing The Awesome Bread Game!!"))  
+currentTime = time.time()
+RPC.update(state="The Awesome Bread Game", details="Having Fun Playing The Awesome Bread Game!!", buttons=[
+    {"label": "Github Repo", "url": "https://github.com/MDxWARRIORxOP/Bread"}, {"label": "Discord", "url": "https://discord.gg/tEk5eSXU7k"}],large_image="nicebread", large_text="French Bread",small_image="smallbutnicebread", small_text="Cool Bread", start=currentTime)
 
 def start(b):
     # start game
