@@ -1,7 +1,18 @@
+import json
 import sys
+import os
 import time
+import requests
+from pypresence import Presence
+
+client_id = '1013449949364617307'
+RPC = Presence(client_id)
+RPC.connect()
+
+print(RPC.update(state="The Awesome Bread Game", details="Having Fun Playing The Awesome Bread Game!!"))  
 
 def start(b):
+    # start game
     if not(b):      
         timeToSleep = 1
         print("Welcome to the BREAD")
@@ -66,3 +77,6 @@ def aOrAnFinder(type):
 
 if __name__=="__main__":
     start(False)
+
+while True:  
+    time.sleep(15) 
