@@ -10,7 +10,7 @@ RPC = Presence(client_id)
 RPC.connect()
 currentTime = time.time()
 
-RPC.update(state="The Awesome Bread Game", details="Having Fun Playing The Awesome Bread Game!!", buttons=[{"label": "Discord", "url": "https://discord.gg/tEk5eSXU7k"}, {"label": "Github Repo", "url": "https://github.com/MDxWARRIORxOP/Bread"}],large_image="nicebread", large_text="French Bread",small_image="smallbutnicebread", small_text="Cool Bread", start=currentTime)
+RPC.update(state="The Awesome Bread Game", details="In love with the bread!!", buttons=[{"label": "Discord", "url": "https://discord.gg/tEk5eSXU7k"}, {"label": "Github Repo", "url": "https://github.com/MDxWARRIORxOP/Bread"}],large_image="nicebread", large_text="French Bread",small_image="smallbutnicebread", small_text="Cool Bread", start=currentTime)
 
 baked = []
 
@@ -54,6 +54,8 @@ def startGame(mode):
                 start(True)
                 
             bake(type)
+    elif mode == "q" or mode == "quit":
+        sys.exit()
     else:
         print("Invalid Mode!")
         start(True)
