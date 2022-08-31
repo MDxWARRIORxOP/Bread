@@ -8,10 +8,11 @@ from pypresence import Presence
 client_id = '1013449949364617307'
 RPC = Presence(client_id)
 RPC.connect()
-
 currentTime = time.time()
-RPC.update(state="The Awesome Bread Game", details="Having Fun Playing The Awesome Bread Game!!", buttons=[
-    {"label": "Github Repo", "url": "https://github.com/MDxWARRIORxOP/Bread"}, {"label": "Discord", "url": "https://discord.gg/tEk5eSXU7k"}],large_image="nicebread", large_text="French Bread",small_image="smallbutnicebread", small_text="Cool Bread", start=currentTime)
+
+RPC.update(state="The Awesome Bread Game", details="Having Fun Playing The Awesome Bread Game!!", buttons=[{"label": "Discord", "url": "https://discord.gg/tEk5eSXU7k"}, {"label": "Github Repo", "url": "https://github.com/MDxWARRIORxOP/Bread"}],large_image="nicebread", large_text="French Bread",small_image="smallbutnicebread", small_text="Cool Bread", start=currentTime)
+
+baked = []
 
 def start(b):
     # start game
@@ -60,14 +61,17 @@ def startGame(mode):
 
 def eat(type):
     aOrAn = aOrAnFinder(type)
-            
-    print(f"You ate {aOrAn} {type}")
-    return None
+
+    if any(type in string for string in baked):
+        print(f"You ate {aOrAn} {type}")
+    else:
+        print(f"You dont have {aOrAn} {type}! you have to bake {aOrAn} {type} to eat it!")
 
 def bake(type):
     aOrAn = aOrAnFinder(type)
-            
+    baked.append(type)        
     print(f"You baked {aOrAn} {type}")
+
 
 def aOrAnFinder(type):
     if type.startswith("a") or type.startswith("e") or type.startswith("i") or  type.startswith("o") or type.startswith("u"):
