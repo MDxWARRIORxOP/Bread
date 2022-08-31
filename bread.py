@@ -70,10 +70,13 @@ def eat(type):
 
 def bake(type):
     aOrAn = aOrAnFinder(type)
-    if len(baked) >= 4:
+    if len(baked) == 4:
         str = ""
         for i in baked:
-            str = str + ", " + i 
+            if baked[-1] == i:
+                str = str + i
+            else: 
+                str =  str + i + ", "
         print(f"You dont have enough space to bake!\nYou currently have {str}!")
     else:    
         baked.append(type)        
