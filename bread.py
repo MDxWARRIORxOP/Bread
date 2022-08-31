@@ -56,21 +56,28 @@ def startGame(mode):
             bake(type)
     else:
         print("Invalid Mode!")
-        return sys.exit()
+        start(True)
     
 
 def eat(type):
     aOrAn = aOrAnFinder(type)
 
-    if any(type in string for string in baked):
+    if any(type == string for string in baked):
         print(f"You ate {aOrAn} {type}")
+        baked.remove(type)
     else:
         print(f"You dont have {aOrAn} {type}! you have to bake {aOrAn} {type} to eat it!")
 
 def bake(type):
     aOrAn = aOrAnFinder(type)
-    baked.append(type)        
-    print(f"You baked {aOrAn} {type}")
+    if len(baked) >= 4:
+        str = ""
+        for i in baked:
+            str = str + ", " + i 
+        print(f"You dont have enough space to bake!\nYou currently have {str}!")
+    else:    
+        baked.append(type)        
+        print(f"You baked {aOrAn} {type}")
 
 
 def aOrAnFinder(type):
